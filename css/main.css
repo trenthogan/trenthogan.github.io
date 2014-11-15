@@ -1,0 +1,615 @@
+/*------------------------------------------------------------
+
+	Main.scss
+
+	Created by:	Trent Hogan
+	
+
+	Copyright 2014 Onwards :)
+
+
+--------------------------------------------------------------*/
+/* Responsive Resets
+-------------------------------------------------------------- */
+@-o-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
+html {
+  overflow-y: auto; }
+
+img,
+audio,
+video,
+canvas {
+  max-width: 100%; }
+
+/* Grid > 6 Column Mobile First
+-------------------------------------------------------------- */
+.container {
+  /*
+    The `max-width` property is the width governer. I dare you to experiment
+    with setting this larger, something like 1280px.
+  */
+  max-width: 1024px;
+  width: 92%;
+  margin: 0px auto;
+  position: relative; }
+
+.row {
+  clear: both; }
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 98%; }
+
+  .grid-1,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .grid-6,
+  .grid-half,
+  .grid-full,
+  .grid-unit {
+    float: left;
+    width: 96.969696969697%;
+    margin: 0 1.515151515152% 1em; }
+
+  .gallery .grid-unit,
+  .grid-half {
+    width: 46.969696969697%;
+    margin: 0 1.515151515152% 1em; }
+
+  .grid-flow-opposite {
+    float: right; } }
+@media screen and (min-width: 768px) {
+  .grid-1 {
+    width: 13.636363636364%; }
+
+  .grid-2 {
+    width: 30.30303030303%; }
+
+  .grid-3,
+  .grid-half {
+    width: 46.969696969697%; }
+
+  .grid-4 {
+    width: 63.636363636364%; }
+
+  .grid-5 {
+    width: 80.30303030303%; }
+
+  .grid-6,
+  .grid-full {
+    width: 96.969696969697%; }
+
+  .gallery .grid-unit {
+    width: 30.30303030303%; }
+
+  .content-pad-right {
+    padding-right: 4%;
+    /* Use (or don't) as necessary. */ }
+
+  .content-pad-left {
+    padding-left: 4%; } }
+/* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
+For best results, use your favorite clearfix here.
+-------------------------------------------------------------- */
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  zoom: 1; }
+
+/* For IE 6/7 (trigger hasLayout) */
+/* Layout
+-------------------------------------------------------------- */
+body {
+  font: 100%/1.5 sans-serif; }
+
+header {
+  border-bottom: 1px solid #ccc; }
+
+section {
+  margin-bottom: 2em; }
+
+footer {
+  font-size: 0.9em;
+  border-top: 1px solid #ccc;
+  padding: 3.5em 0 2.5em; }
+
+.content {
+  padding-top: 2.5em; }
+  .content .post-image {
+    display: block;
+    margin: 2em auto; }
+
+/* Post List Page */
+.post {
+  border-top: 1px solid #ccc;
+  margin-top: 4em; }
+
+.post:first-child {
+  border: none;
+  margin-top: 0; }
+
+/* Read more link */
+.read-more {
+  padding: 10px 0;
+  text-shadow: none;
+  position: relative;
+  display: block;
+  width: 5.5em;
+  margin: 0 auto;
+  color: #1C1C1C;
+  font-size: 1em;
+  line-height: 1.15em; }
+
+.read-more::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 10px 0;
+  max-width: 0;
+  color: #828282;
+  content: attr(data-hover);
+  -webkit-transition: max-width 0.5s;
+  -moz-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+  border-bottom: 1px solid #828282;
+  font-size: 1em;
+  line-height: 1.15em;
+  white-space: nowrap; }
+
+a:hover::before {
+  max-width: 100%; }
+
+/* Navigation
+-------------------------------------------------------------- */
+.mobile-navicon {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  cursor: pointer; }
+
+header .nav {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  -moz-transition: max-height 0.5s ease-in-out;
+  -o-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-height: 0px; }
+  header .nav > ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 1em 0 3em 0; }
+    header .nav > ul li:first-child {
+      padding-top: 0; }
+    header .nav > ul > li {
+      list-style: none;
+      width: 100%;
+      padding-top: 1em; }
+      header .nav > ul > li a {
+        font-size: 1em;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        color: #1C1C1C;
+        text-decoration: none;
+        text-transform: uppercase; }
+header .down {
+  max-height: 420px; }
+
+/* Typography
+-------------------------------------------------------------- */
+.heading {
+  font-size: 5em;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1rem;
+  text-shadow: -0.07em 0.07em #BFBFBF;
+  color: #1C1C1C; }
+
+.sub-heading, h1 {
+  font-size: 3em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #1C1C1C; }
+
+.post-sub-heading {
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+  color: #1C1C1C; }
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  color: #3d3d3d;
+  text-decoration: none; }
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #1C1C1C; }
+
+/* Elements
+-------------------------------------------------------------- */
+figure {
+  margin: 0;
+  background: #f8f8f8; }
+
+figcaption {
+  padding: 0.5em 1em 1em;
+  font-size: 0.875em; }
+
+code {
+  padding: 0.5em;
+  background: #efefef;
+  width: 100%;
+  display: block; }
+
+/* Helpers
+-------------------------------------------------------------- */
+.show-grid div[class*='grid-'] {
+  background-color: #eee;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  text-align: center; }
+
+.center {
+  text-align: center; }
+
+/* Css Transitions
+-------------------------------------------------------------- */
+.fade-to-white {
+  fill-opacity: 0;
+  animation-name: highlight-fade;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  -webkit-animation-name: highlight-fade;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: highlight-fade;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-direction: alternate; }
+
+@keyframes highlight-fade {
+  0% {
+    fill-opacity: 0; }
+  75% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 1; } }
+@-webkit-keyframes highlight-fade {
+  0% {
+    fill-opacity: 0; }
+  75% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 1; } }
+@-moz-keyframes highlight-fade {
+  0% {
+    fill-opacity: 0; }
+  75% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 1; } }
+/* Media Queries
+-------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /*Responsive Resets*/
+  header .nav {
+    max-height: none !important;
+    padding: 0.5em 0;
+    border-top: none;
+    margin-top: 0;
+    margin-bottom: 0; }
+    header .nav > ul > li {
+      display: inline-block;
+      margin-bottom: 0.5em;
+      margin-left: 2em;
+      width: auto;
+      padding-bottom: 0; }
+    header .nav > ul > li:first-child {
+      margin-left: 0; }
+
+  .mobile-navicon {
+    display: none; } }
+/* Code Styling
+-------------------------------------------------------------- */
+.highlight {
+  background: #ffffff; }
+
+.highlight .c {
+  color: #999988;
+  font-style: italic; }
+
+/* Comment */
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2; }
+
+/* Error */
+.highlight .k {
+  font-weight: bold; }
+
+/* Keyword */
+.highlight .o {
+  font-weight: bold; }
+
+/* Operator */
+.highlight .cm {
+  color: #999988;
+  font-style: italic; }
+
+/* Comment.Multiline */
+.highlight .cp {
+  color: #999999;
+  font-weight: bold; }
+
+/* Comment.Preproc */
+.highlight .c1 {
+  color: #999988;
+  font-style: italic; }
+
+/* Comment.Single */
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic; }
+
+/* Comment.Special */
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd; }
+
+/* Generic.Deleted */
+.highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa; }
+
+/* Generic.Deleted.Specific */
+.highlight .ge {
+  font-style: italic; }
+
+/* Generic.Emph */
+.highlight .gr {
+  color: #aa0000; }
+
+/* Generic.Error */
+.highlight .gh {
+  color: #999999; }
+
+/* Generic.Heading */
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd; }
+
+/* Generic.Inserted */
+.highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa; }
+
+/* Generic.Inserted.Specific */
+.highlight .go {
+  color: #888888; }
+
+/* Generic.Output */
+.highlight .gp {
+  color: #555555; }
+
+/* Generic.Prompt */
+.highlight .gs {
+  font-weight: bold; }
+
+/* Generic.Strong */
+.highlight .gu {
+  color: #aaaaaa; }
+
+/* Generic.Subheading */
+.highlight .gt {
+  color: #aa0000; }
+
+/* Generic.Traceback */
+.highlight .kc {
+  font-weight: bold; }
+
+/* Keyword.Constant */
+.highlight .kd {
+  font-weight: bold; }
+
+/* Keyword.Declaration */
+.highlight .kp {
+  font-weight: bold; }
+
+/* Keyword.Pseudo */
+.highlight .kr {
+  font-weight: bold; }
+
+/* Keyword.Reserved */
+.highlight .kt {
+  color: #445588;
+  font-weight: bold; }
+
+/* Keyword.Type */
+.highlight .m {
+  color: #009999; }
+
+/* Literal.Number */
+.highlight .s {
+  color: #d14; }
+
+/* Literal.String */
+.highlight .na {
+  color: #008080; }
+
+/* Name.Attribute */
+.highlight .nb {
+  color: #0086B3; }
+
+/* Name.Builtin */
+.highlight .nc {
+  color: #445588;
+  font-weight: bold; }
+
+/* Name.Class */
+.highlight .no {
+  color: #008080; }
+
+/* Name.Constant */
+.highlight .ni {
+  color: #800080; }
+
+/* Name.Entity */
+.highlight .ne {
+  color: #990000;
+  font-weight: bold; }
+
+/* Name.Exception */
+.highlight .nf {
+  color: #990000;
+  font-weight: bold; }
+
+/* Name.Function */
+.highlight .nn {
+  color: #555555; }
+
+/* Name.Namespace */
+.highlight .nt {
+  color: #000080; }
+
+/* Name.Tag */
+.highlight .nv {
+  color: #008080; }
+
+/* Name.Variable */
+.highlight .ow {
+  font-weight: bold; }
+
+/* Operator.Word */
+.highlight .w {
+  color: #bbbbbb; }
+
+/* Text.Whitespace */
+.highlight .mf {
+  color: #009999; }
+
+/* Literal.Number.Float */
+.highlight .mh {
+  color: #009999; }
+
+/* Literal.Number.Hex */
+.highlight .mi {
+  color: #009999; }
+
+/* Literal.Number.Integer */
+.highlight .mo {
+  color: #009999; }
+
+/* Literal.Number.Oct */
+.highlight .sb {
+  color: #d14; }
+
+/* Literal.String.Backtick */
+.highlight .sc {
+  color: #d14; }
+
+/* Literal.String.Char */
+.highlight .sd {
+  color: #d14; }
+
+/* Literal.String.Doc */
+.highlight .s2 {
+  color: #d14; }
+
+/* Literal.String.Double */
+.highlight .se {
+  color: #d14; }
+
+/* Literal.String.Escape */
+.highlight .sh {
+  color: #d14; }
+
+/* Literal.String.Heredoc */
+.highlight .si {
+  color: #d14; }
+
+/* Literal.String.Interpol */
+.highlight .sx {
+  color: #d14; }
+
+/* Literal.String.Other */
+.highlight .sr {
+  color: #009926; }
+
+/* Literal.String.Regex */
+.highlight .s1 {
+  color: #d14; }
+
+/* Literal.String.Single */
+.highlight .ss {
+  color: #990073; }
+
+/* Literal.String.Symbol */
+.highlight .bp {
+  color: #999999; }
+
+/* Name.Builtin.Pseudo */
+.highlight .vc {
+  color: #008080; }
+
+/* Name.Variable.Class */
+.highlight .vg {
+  color: #008080; }
+
+/* Name.Variable.Global */
+.highlight .vi {
+  color: #008080; }
+
+/* Name.Variable.Instance */
+.highlight .il {
+  color: #009999; }
+
+/* Literal.Number.Integer.Long */
+/* Responsive code highlights */
+.highlight .lineno {
+  color: #ccc;
+  display: inline-block;
+  padding: 0 5px;
+  border-right: 1px solid #ccc; }
+
+.highlight pre code {
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+  word-wrap: normal; }
+
+/*# sourceMappingURL=main.css.map */

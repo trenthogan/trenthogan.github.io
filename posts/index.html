@@ -1,0 +1,37 @@
+---
+layout: default
+title:  "Posts"
+---
+
+
+
+	    	   <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeIn">TRENT<span>HOGAN</span></h1>
+                  <p class="animated fadeIn delay-05s">Blog Post's</em></p>
+                </div>
+              </div>
+            </div>
+            <a href="#about" class="down-btn"><i class="fa fa-chevron-down"></i></a>
+          </section>
+        </header>
+        <section class="intro text-center section-padding" id="about">
+          <div class="container">
+
+          	{% for post in site.posts limit:10 %}
+            <div class="row post-summary">
+              <div class="col-md-8 col-md-offset-2">
+                <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
+                <p>{{ post.excerpt }}</p>
+                 <a href="{{ post.url }}" class="read-more" data-hover="Read More">Read More</a>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </section>
+        
+       
+
+
+	      

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+		
+
+	   		  <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeIn">{{ page.title }}</h1>
+                  <p class="animated fadeIn delay-05s">{{ page.subtitle }}</em></p>
+                </div>
+              </div>
+            </div>
+            <a href="#about" class="down-btn"><i class="fa fa-chevron-down"></i></a>
+          </section>
+        </header>
+        <section class="intro text-center section-padding" id="about">
+          <div class="container">
+            <div class="row post">
+              <div class="col-md-8 col-md-offset-2">
+
+				<div class="post-image">
+				  <img src="{{page.image}}" alt="{{page.image-alt}}" class="img-responsive" />
+				</div>
+
+                {{ content }}
+
+				<br />
+				<br />
+                <a href="/posts/"><i class="fa fa-arrow-left"></i>  Back to all posts</a>
+
+              </div>
+            </div>
+            <div class="row disqus_thread">
+              <div class="col-md-8 col-md-offset-2">
+
+                <div id="disqus_thread"></div>
+			    <script type="text/javascript">
+			        
+			        var disqus_shortname = 'trenthogan';
+			        var disqus_identifier = '{{ page.disqus_id }}';
+
+			        /* * * DON'T EDIT BELOW THIS LINE * * */
+			        (function() {
+			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			        })();
+			    </script>
+              </div>
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,4 @@
+name: Trent Hogan
+markdown: redcarpet
+highlighter: pygments
+permalink: /:categories/:title
