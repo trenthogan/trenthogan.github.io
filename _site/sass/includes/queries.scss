@@ -9,6 +9,12 @@
 	.wp2, .wp4, .wp5, .light-box { margin-bottom: 30px; }
 	.legals { text-align: center; margin: 0; padding: 0; }
 	.credit { text-align: center; }
+	#hero{ padding: 65px 0 65px 0; 
+	  .inner{
+		padding: 70px 0;
+	  }
+	}
+
 }
 /* xGA iPad */
 @media screen and (max-width:1024px) {
