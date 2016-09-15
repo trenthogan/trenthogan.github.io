@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trent Hogan | Web Developer</title>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Styles -->
+    <link href="/css/style.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- Google Tracking -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-50838132-1', 'trenthogan.github.io');
+          ga('send', 'pageview');
+
+        </script>
+      </head>
+      <body id="top">
+        <header id="home">
+          <nav>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <nav id="pull" class="pull up">
+                    <ul class="top-nav">
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/#about">About</a></li>
+                      <li><a href="/#portfolio">Portfolio</a></li>
+                      <li><a href="/#contact">Contact</a></li>
+                      <li><a href="/posts/">Blog</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+              </div>
+
+
+	                  
+		   		  <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeIn">CSS<span>CSS</span></h1>
+                  <p class="animated fadeIn delay-05s">Handling Duplicating Css Rules</p>
+                </div>
+              </div>
+            </div>
+            <a href="#about" class="down-btn"><i class="fa fa-chevron-down"></i></a>
+          </section>
+        </header>
+        <section class="intro text-center section-padding" id="about">
+          <div class="container">
+            <div class="row post">
+              <div class="col-md-8 col-md-offset-2">
+
+				<div class="post-image">
+				  <img src="" alt="" class="img-responsive" />
+				</div>
+
+                <p>What is csscss? It&#39;s <a href="http://zmoazeni.github.io/csscss/" title="CSSCSS">Github Pages Reference</a> refers to it as &quot;A CSS redundancy analyzer that analyzes redundancy.&quot; Basically it is a Ruby Gem which can find duplicating rules in your css or sass files and help you to write cleaner more maintainable css.</p>
+
+<p>To install as of the 11th of May 2014 you will need Ruby 1.9 or greater installed on your system. 
+Fire up your terminal and install the gem.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install csscss</code></pre></figure>
+
+<p>If you want to test a sass file you will also need to install sass.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install sass</code></pre></figure>
+
+<p>Just for testing lets create a css or sass file. I&#39;m going to call mine test.scss and will add two duplcating sets of rules to the file so it looks like this.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.test-selector</span><span class="p">{</span>
+
+    <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">2em</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="nc">.test-selector-2</span><span class="p">{</span>
+
+    <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">2em</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Ok now lets run Csscss on this file and see what happens.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">csscss path/to/test.scss</code></pre></figure>
+
+<p>Your terminal should display.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules</code></pre></figure>
+
+<p>If you would like Csscss to tell you what the conflicting rules are you can run it in verbose mode.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">csscss -v path/to/test.scss</code></pre></figure>
+
+<p>And the output should now be.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules
+  - font-family: sans-serif
+  - font-size: 2em
+  - margin: 2em 0</code></pre></figure>
+
+<p>Over on <a href="http://css-tricks.com/csscss/" title="Css Tricks Csscss">Css Tricks</a> it is recommended if you have 5 or more conflicting rules it maybe time to look at optimization. I think this sounds like a pretty good rule. </p>
+
+<p>Also knowing that the duplicating rules exist can help you to write better css in the future. This could be a great tool to come back and optimize legacy code or code you may have inherited from another developer etc.</p>
+
+<p>For more info on csscss such as how to use with Less etc check it out <a href="http://zmoazeni.github.io/csscss/" title="CSSCSS">here</a></p>
+
+
+				<br />
+				<br />
+                <a href="/posts/"><i class="fa fa-arrow-left"></i>  Back to all posts</a>
+
+              </div>
+            </div>
+            <div class="row disqus_thread">
+              <div class="col-md-8 col-md-offset-2">
+
+                <div id="disqus_thread"></div>
+			    <script type="text/javascript">
+			        
+			        var disqus_shortname = 'trenthogan';
+			        var disqus_identifier = 'handling-duplcate-css-rules';
+
+			        /* * * DON'T EDIT BELOW THIS LINE * * */
+			        (function() {
+			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			        })();
+			    </script>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+          
+
+        <footer class="contact-wrap">
+          <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="social-buttons">
+                  <li><a href="https://github.com/trenthogan" class="social-btn"><i class="fa fa-github"></i></a></li>
+                  <li><a href="http://codepen.io/hogantrent/" class="social-btn"><i class="fa fa-codepen"></i></a></li>
+                  <li><a href="https://twitter.com/trent001" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="https://www.linkedin.com/pub/trent-hogan/30/859/217" class="social-btn"><i class="fa fa-linkedin-square"></i></a></li>
+                  <li><a href="mailto:trenthogan1@gmail.com" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <script src="/js/script.min.js"></script>
+
+      </body>
+    </html>
