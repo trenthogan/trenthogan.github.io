@@ -86,15 +86,15 @@ It has quickly become my favourite. The syntax for me is easier to read than Gru
 
 <p>You can now install Gulp. I like to install it globally so in your terminal enter:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g gulp</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install -g gulp</code></pre></figure>
 
 <p>Now we will need to install gulp locally for your project. In your project&#39;s root directory run.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install gulp</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install gulp</code></pre></figure>
 
 <p>Now you can create a file called: gulpfile.js and place it in your projects root dirctory. In it&#39;s most basic form your gulpfile.js could look like this:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
 
 <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
      <span class="c1">// place code for your default task here</span>
@@ -104,17 +104,17 @@ It has quickly become my favourite. The syntax for me is easier to read than Gru
 
 <p>First we are going to install <a href="https://www.npmjs.org/package/gulp-minify-css" title="Gulp Minify Css">gulp-minify-css.</a> Back into your terminal and enter:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install gulp-minify-css</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install gulp-minify-css</code></pre></figure>
 
 <p>The Node Package Manager (npm) will install the plugin for us.</p>
 
 <p>After we minify our css we also want to rename the file before we save it. To do this we can grab another plugin:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install gulp-rename</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install gulp-rename</code></pre></figure>
 
 <p>Ok we have installed the two plugins we need to minify our css lets require them in our gulpfile.js and create a task to do the minifying.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Required</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">//Required</span>
 <span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">minifyCSS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-minify-css&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">rename</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-rename&#39;</span><span class="p">);</span>
@@ -146,19 +146,19 @@ It has quickly become my favourite. The syntax for me is easier to read than Gru
 
 <p>Now in the terminal in the root directory of you project enter</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gulp</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gulp</code></pre></figure>
 
 <p>and all your default tasks will be run. So for us we should have a nicely minified file in the css directory of our project named main.min.css.</p>
 
 <p>Well thats our css sorted but what about our javascript? We can use npm again to install another plugin gulp-uglify to take care of this for us.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install gulp-uglify</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install gulp-uglify</code></pre></figure>
 
 <p>From here we can basically repeat the same process described above for the css to handle the js. Requiring the new plugin and creating a new function using the gulp-uglify plugin.</p>
 
 <p>Our gulpfile.js should now look like this:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Required</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">//Required</span>
 <span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">minifyCSS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-minify-css&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">rename</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-rename&#39;</span><span class="p">);</span>
@@ -190,7 +190,7 @@ It has quickly become my favourite. The syntax for me is easier to read than Gru
 
 <p>Now run </p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gulp</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gulp</code></pre></figure>
 
 <p>again and we should have some minified javascript and css.</p>
 

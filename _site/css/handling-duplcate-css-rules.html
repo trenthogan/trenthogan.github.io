@@ -82,48 +82,48 @@
 <p>To install as of the 11th of May 2014 you will need Ruby 1.9 or greater installed on your system. 
 Fire up your terminal and install the gem.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install csscss</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gem install csscss</code></pre></figure>
 
 <p>If you want to test a sass file you will also need to install sass.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install sass</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gem install sass</code></pre></figure>
 
 <p>Just for testing lets create a css or sass file. I&#39;m going to call mine test.scss and will add two duplcating sets of rules to the file so it looks like this.</p>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.test-selector</span><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">test-selector</span><span class="p">{</span>
 
-    <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">2em</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="p">}</span>
 
-<span class="nc">.test-selector-2</span><span class="p">{</span>
+<span class="p">.</span><span class="nc">test-selector-2</span><span class="p">{</span>
 
-    <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">2em</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="p">}</span></code></pre></figure>
 
 <p>Ok now lets run Csscss on this file and see what happens.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">csscss path/to/test.scss</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>csscss path/to/test.scss</code></pre></figure>
 
 <p>Your terminal should display.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules</code></pre></figure>
 
 <p>If you would like Csscss to tell you what the conflicting rules are you can run it in verbose mode.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">csscss -v path/to/test.scss</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>csscss -v path/to/test.scss</code></pre></figure>
 
 <p>And the output should now be.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="o">{</span>.test-selector<span class="o">}</span> AND <span class="o">{</span>.test-selector-2<span class="o">}</span> share <span class="m">3</span> rules
   - font-family: sans-serif
   - font-size: 2em
-  - margin: 2em 0</code></pre></figure>
+  - margin: 2em <span class="m">0</span></code></pre></figure>
 
 <p>Over on <a href="http://css-tricks.com/csscss/" title="Css Tricks Csscss">Css Tricks</a> it is recommended if you have 5 or more conflicting rules it maybe time to look at optimization. I think this sounds like a pretty good rule. </p>
 
